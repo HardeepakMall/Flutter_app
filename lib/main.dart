@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'next_page/next_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,7 +40,7 @@ class __MyAppExtState extends State<_MyAppExt> {
             ? Container(
                 width: double.infinity,
                 height: double.infinity,
-                color: Colors.lime,
+                color: Colors.tealAccent,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -99,14 +100,5 @@ class __MyAppExtState extends State<_MyAppExt> {
         },
       ),
     );
-  }
-}
-
-class NextPage extends StatelessWidget {
-  const NextPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar());
   }
 }
