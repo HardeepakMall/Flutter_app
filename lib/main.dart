@@ -28,6 +28,7 @@ class _MyAppExt extends StatefulWidget {
 class __MyAppExtState extends State<_MyAppExt> {
   String buttonName = 'Click';
   int currentIndex = 0;
+  bool _isClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,18 @@ class __MyAppExtState extends State<_MyAppExt> {
                   ],
                 ),
               )
-            : Image.asset('images/wallpaper.jpg'),
+            : GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _isClicked = !_isClicked;
+                  });
+                },
+                child: _isClicked
+                    ? Image.asset('images/wallpaper.jpg')
+                    : Image.network(
+                        'https://www.shutterstock.com/image-photo/aurora-borealis-northern-lights-over-600nw-2524531261.jpg',
+                      ),
+              ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
